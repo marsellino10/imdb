@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React , { useEffect, useState }from 'react';
+import { Route ,Routes } from 'react-router-dom';
+import axios from 'axios';
+
 import './App.css';
+import Header from './components/header/Header';
+import Home from './pages/home/Home';
+import MoviesContainer from './components/movies contaier/MoviesContainer';
+import MovieDetails from './pages/movie-details/MovieDetails';
+
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+        <Routes>
+          <Route exact path='/' element={<Home />}/>
+          <Route path='movie/:id' element={<MovieDetails />}/>
+          <Route path='movies/:type' element={<MoviesContainer />}/>
+        </Routes>
     </div>
   );
 }

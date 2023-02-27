@@ -1,0 +1,32 @@
+.imdb-header{
+    padding: 2rem;
+    display: flex;
+
+}
+
+.header-left{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-left p{
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.header-left p:hover{
+    color: red;
+}
+
+.header__icon {
+    width: 80px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:600px){
+    .header-left p{
+        font-size: 0.8rem;
+    }
+}
